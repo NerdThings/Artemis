@@ -1,0 +1,871 @@
+/*
+ * NerdThings Artemis - CSS Framework
+ * Copyright (C) NerdThings 2019
+ */
+
+/* General Styles */
+
+* {
+    font-family: "Open Sans", sans-serif;
+}
+
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Preload */
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+/* Body colouring */
+
+body {
+    background: #F5F7FA;
+    background: -webkit-linear-gradient(to bottom right,#F5F7FA,#B8C6DB);
+    background: linear-gradient(to bottom right, #F5F7FA, #B8C6DB);
+    color: #000;
+}
+
+html.dark body {
+    background: #3f3f3f;
+    background: -webkit-linear-gradient(to bottom right,#5b5b5b,#3f3f3f);
+    background: linear-gradient(to bottom right,#5b5b5b,#3f3f3f);
+    color: #fff;
+}
+
+/* Links */
+
+a {
+    color: #000;
+    transition: all .2s;
+}
+
+html.dark a {
+    color: #fff;
+}
+
+a:hover {
+    color: #4f4f4f;
+    transition: all .5s;
+}
+
+html.dark a:hover {
+    color: #adadad;
+}
+
+/* Tables */
+
+table {
+    width: 100%;
+    border-collapse:collapse;
+}
+
+table tbody,
+table thead {
+    border: 0;
+}
+
+table tr {
+    border-bottom: 1px solid #aaaaaa;
+}
+
+table tbody td {
+    border: 0;
+}
+
+/* Buttons */
+
+button,
+input[type=submit],
+input[type=button],
+input[type=reset] {
+    padding: 12px 48px;
+    outline: 0;
+    border: 0;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    -webkit-transition: transform .5s, box-shadow .5s;
+    -moz-transition: transform .5s, box-shadow .5s;
+    transition: transform .5s, box-shadow .5s;
+    background-image: linear-gradient(to right, #F5F7FA, #F5F7FA);
+    color: #000;
+    border-radius: 5px;
+}
+
+html.dark button,
+html.dark input[type=submit],
+html.dark input[type=button],
+html.dark input[type=reset] {
+    background-image: linear-gradient(to right, #2f2f2f, #2f2f2f);
+    color: #fff;
+}
+
+html:not(.good-browser) button:not(:disabled):hover,
+html:not(.good-browser) input[type=submit]:not(:disabled):hover,
+html:not(.good-browser) input[type=button]:not(:disabled):hover,
+html:not(.good-browser) input[type=reset]:not(:disabled):hover,
+html.dark:not(.good-browser) button:not(:disabled):hover,
+html.dark:not(.good-browser) input[type=submit]:not(:disabled):hover,
+html.dark:not(.good-browser) input[type=button]:not(:disabled):hover,
+html.dark:not(.good-browser) input[type=reset]:not(:disabled):hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: 0 5px 2px 2px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(to right, #C077B4, #51B0B0);
+    color: #fff;
+}
+
+/* Better Buttons */
+
+html.good-browser button,
+html.good-browser input[type=submit],
+html.good-browser input[type=button],
+html.good-browser input[type=reset] {
+    background-color: #fff;
+    background-repeat: no-repeat;
+
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #C077B4, #51B0B0 50%, #F5F7FA 50%);
+
+    -webkit-background-clip: text, border-box;
+    background-clip: text, border-box;
+
+    background-position: 100% 0;
+
+    -webkit-transition: background-position .75s, transform .5s, box-shadow .5s;
+    -moz-transition: background-position .75s, transform .5s, box-shadow .5s;
+    transition: background-position .75s, transform .5s, box-shadow .5s;
+
+    color: transparent;
+    font-weight: bold;
+}
+
+html.good-browser button:not(:disabled):hover,
+html.good-browser input[type=submit]:not(:disabled):hover,
+html.good-browser input[type=button]:not(:disabled):hover,
+html.good-browser input[type=reset]:not(:disabled):hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+    background-position: 0 0;
+
+    box-shadow: 0 5px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+html.dark.good-browser button,
+html.dark.good-browser input[type=submit],
+html.dark.good-browser input[type=button],
+html.dark.good-browser input[type=reset] {
+    background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #C077B4, #51B0B0 50%, #2f2f2f 50%) !important;
+}
+
+/* Button Modifiers */
+
+button.square:hover,
+input[type=submit].square:hover,
+input[type=button].square:hover,
+input[type=reset].square:hover,
+html.good-browser button.square,
+html.good-browser input[type=submit].square,
+html.good-browser input[type=button].square,
+html.good-browser input[type=reset].square {
+    border-radius: 0;
+}
+
+button.norise:hover,
+input[type=submit].norise:hover,
+input[type=button].norise:hover,
+input[type=reset].norise:hover,
+html.good-browser button.norise:hover,
+html.good-browser input[type=submit].norise:hover,
+html.good-browser input[type=button].norise:hover,
+html.good-browser input[type=reset].norise:hover {
+    transform: translateY(0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+button.noshadow:hover,
+input[type=submit].noshadow:hover,
+input[type=button].noshadow:hover,
+input[type=reset].noshadow:hover,
+html.good-browser button.noshadow:hover,
+html.good-browser input[type=submit].noshadow:hover,
+html.good-browser input[type=button].noshadow:hover,
+html.good-browser input[type=reset].noshadow:hover {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+button:disabled:hover,
+input[type=submit]:disabled:hover,
+input[type=button]:disabled:hover,
+input[type=reset]:disabled:hover {
+    cursor: default;
+    animation: shake-wrong 0.8s both;
+}
+
+html.good-browser button:disabled:hover,
+html.good-browser input[type=submit]:disabled:hover,
+html.good-browser input[type=button]:disabled:hover,
+html.good-browser input[type=reset]:disabled:hover {
+    color: #fff;
+    font-weight: normal;
+    cursor: default;
+    background-image: linear-gradient(to right, #F5F7FA, #F5F7FA);
+}
+
+html.good-browser.dark button:disabled:hover,
+html.good-browser.dark input[type=submit]:disabled:hover,
+html.good-browser.dark input[type=button]:disabled:hover,
+html.good-browser.dark input[type=reset]:disabled:hover {
+    background-image: linear-gradient(to right, #2f2f2f, #2f2f2f);
+}
+
+button.active,
+input[type=submit].active,
+input[type=button].active,
+input[type=reset].active,
+html.dark button.active,
+html.dark input[type=submit].active,
+html.dark input[type=button].active,
+html.dark input[type=reset].active {
+    background-image: linear-gradient(to right, #C077B4, #51B0B0);
+    color: #fff;
+    font-weight: normal;
+}
+
+html.good-browser button.active,
+html.good-browser input[type=submit].active,
+html.good-browser input[type=button].active,
+html.good-browser input[type=reset].active,
+html.dark.good-browser button.active,
+html.dark.good-browser input[type=submit].active,
+html.dark.good-browser input[type=button].active,
+html.dark.good-browser input[type=reset].active {
+    background-position: 0 0;
+}
+
+/* Text boxes */
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel],
+input[type=search],
+input[type=number],
+input[type=url],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=datetime],
+input[type=datetime-local],
+textarea {
+    background: none;
+    border: 2px solid #51B0B0;
+    outline: none;
+    border-radius: 15px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+input[type=text]::placeholder,
+input[type=password]::placeholder,
+input[type=email]::placeholder,
+input[type=tel]::placeholder,
+input[type=search]::placeholder,
+input[type=number]::placeholder,
+input[type=url]::placeholder,
+input[type=date]::placeholder,
+input[type=month]::placeholder,
+input[type=week]::placeholder,
+input[type=datetime]::placeholder,
+input[type=datetime-local]::placeholder,
+textarea::placeholder {
+    color: #595959;
+}
+
+input[type=text].large,
+input[type=password].large,
+input[type=email].large,
+input[type=tel].large,
+input[type=search].large,
+input[type=number].large,
+input[type=url].large,
+input[type=date].large,
+input[type=month].large,
+input[type=week].large,
+input[type=datetime].large,
+input[type=datetime-local].large,
+textarea.large {
+    padding: 10px 15px;
+}
+
+html.dark input[type=text],
+html.dark input[type=password],
+html.dark input[type=email],
+html.dark input[type=tel],
+html.dark input[type=search],
+html.dark input[type=number],
+html.dark input[type=url],
+html.dark input[type=date],
+html.dark input[type=month],
+html.dark input[type=week],
+html.dark input[type=datetime],
+html.dark input[type=datetime-local],
+html.dark textarea {
+    color: #fff;
+}
+
+html.dark input[type=text]::placeholder,
+html.dark input[type=password]::placeholder,
+html.dark input[type=email]::placeholder,
+html.dark input[type=tel]::placeholder,
+html.dark input[type=search]::placeholder,
+html.dark input[type=number]::placeholder,
+html.dark input[type=url]::placeholder,
+html.dark input[type=date]::placeholder,
+html.dark input[type=month]::placeholder,
+html.dark input[type=week]::placeholder,
+html.dark input[type=datetime]::placeholder,
+html.dark input[type=datetime-local]::placeholder,
+html.dark textarea::placeholder {
+    color: #b7b7b7;
+}
+
+input[type=search]::-webkit-search-cancel-button{
+    display: none;
+    /* TODO: Make this look nice */
+}
+
+input[type=text].is-error,
+input[type=password].is-error,
+input[type=email].is-error,
+input[type=tel].is-error,
+input[type=search].is-error,
+input[type=number].is-error,
+input[type=url].is-error,
+textarea.is-error {
+    border-color: #ED213A;
+}
+
+input[type=text].is-valid,
+input[type=password].is-valid,
+input[type=email].is-valid,
+input[type=tel].is-valid,
+input[type=search].is-valid,
+input[type=number].is-valid,
+input[type=url].is-valid,
+textarea.is-valid {
+    border-color: #56ab2f;
+}
+
+input[type=color] {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Color input */
+
+input[type=color]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border: none;
+}
+
+input[type=color]::-webkit-color-swatch {
+    border: 2px solid #51B0B0;
+    border-radius: 15px;
+}
+
+/* Range Input */
+
+input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.5px;
+    cursor: pointer;
+    border: 2px solid #C077B4;
+    border-radius: 5px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 36px;
+    width: 16px;
+    border-radius: 15px;
+    background: #51B0B0;
+    cursor: pointer;
+    margin-top: -15px;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.5px;
+    cursor: pointer;
+    border: 2px solid #C077B4;
+    border-radius: 5px;
+}
+input[type=range]::-moz-range-thumb {
+    height: 36px;
+    width: 16px;
+    border-radius: 15px;
+    background: #51B0B0;
+    cursor: pointer;
+    margin-top: -15px;
+    border: none;
+}
+
+/* Box Model */
+
+.box {
+    background: rgba(0, 0, 0, 0.05);
+    transition: all .2s;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.box:hover {
+    transition: all .4s;
+    background: rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.box .heading {
+    margin: -15px -15px 0;
+    border-radius: 5px 5px 0 0;
+    background-image: linear-gradient(to right, #C077B4, #51B0B0);
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 5px;
+}
+
+.box .heading.medium {
+    min-height: 100px;
+}
+
+.box .heading.large {
+    min-height: 150px;
+}
+
+.box .heading * {
+    /* Always use white */
+    color: #fff;
+}
+
+.box .heading a:hover {
+    /* Fix for anchor element */
+    color: #adadad;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.grid .box {
+    flex: 1 1 25%;
+}
+
+.grid .box img {
+    height: 250px;
+}
+
+.grid .box.big {
+    flex: 1 1 50%;
+}
+
+/* Box Modifiers */
+
+.box.norise:hover {
+    transform: translateY(0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Landing */
+
+header.landing {
+    display: block;
+    position: relative;
+    min-height: 500px;
+    max-height: 850px;
+    height: 100vh;
+    min-width: 100%;
+    color: #fff;
+}
+
+header.landing div {
+    transform-origin: 100% 0;
+    text-align: center;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    position: absolute;
+}
+
+/* Standard Heading */
+
+header:not(.landing) {
+    background-image: linear-gradient(to right, #C077B4, #51B0B0);
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+header:not(.landing) * {
+    color: #fff;
+}
+
+header:not(.landing) a:hover {
+    /* Fix for anchor element */
+    color: #adadad;
+}
+
+header.primary {
+    min-height: 200px;
+}
+
+header.secondary {
+    min-height: 100px;
+}
+
+header.top-corners {
+    border-radius: 5px 5px 0 0;
+}
+
+header.bottom-corners {
+    border-radius: 0 0 5px 5px;
+}
+
+header.all-corners {
+    border-radius: 5px;
+}
+
+/* Main page padding */
+
+main {
+    padding: 0 15px 15px 15px;
+}
+
+main header,
+main footer {
+    /* Overcome padding */
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/* Reading area constraint */
+
+.reading-area {
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+/* Footer */
+
+footer {
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.05);
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+}
+
+footer ul.quick_links {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+footer ul.quick_links li {
+    flex: 1 1 33%;
+}
+
+footer a {
+    color: #000;
+}
+
+/* Navigation */
+
+#nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    background: #c077b4;
+    background: -webkit-linear-gradient(to right, #C077B4, #51B0B0);
+    background: linear-gradient(to right, #C077B4, #51B0B0);
+
+    padding: 5px;
+    height: 48px;
+    z-index: 200;
+    color: #000;
+}
+
+#nav .nav_checkbox {
+    display: none;
+}
+
+#nav .nav_toggle {
+    display: none;
+}
+
+#nav span {
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    float:left;
+    line-height: 48px;
+    color: #fff;
+}
+
+#nav a,
+#nav a:hover,
+#nav a:hover,
+#nav li {
+    color: #fff;
+    border-bottom: 0;
+    transition: all 0s;
+}
+
+#nav span a,
+#nav span a:hover {
+    border: 0;
+}
+
+#nav span img {
+    float: left;
+    height: 50px;
+    margin-right: 5px;
+}
+
+#nav div {
+    float: left;
+}
+
+#nav ul {
+    list-style-type: none;
+    height: 48px;
+    float: right;
+    padding-right: 10px;
+    margin: 0;
+}
+
+#nav ul li {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+}
+
+#nav ul li.mobile_entry {
+    display: none;
+}
+
+#nav ul li a {
+    text-decoration: none;
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 12px;
+    outline: 0 solid white;
+    margin: 0 5px;
+}
+
+#nav ul li a i {
+    color: white;
+    margin-right: 5px;
+}
+
+#nav ul li a:hover,
+html.dark #nav ul li a:hover {
+    color: #fff;
+    border: 0;
+    outline: 1px solid white;
+}
+
+#nav ul li:hover ul {
+    display: block;
+    position: absolute;
+    top: 48px;
+    left: 0;
+}
+
+.nav-spacer {
+    display: block;
+    height: 50px;
+}
+
+/* Mobile Nav */
+
+#nav.mobile a,
+#nav.mobile a:hover,
+#nav.mobile a:hover,
+#nav.mobile li,
+html.dark #nav.mobile a,
+html.dark #nav.mobile a:hover,
+html.dark #nav.mobile a:hover,
+html.dark #nav.mobile li{
+    color: #fff;
+    border-bottom: 0;
+    transition: all 0s;
+}
+
+#nav.mobile span {
+    display: none;
+}
+
+#nav.mobile ul {
+    transform: translateX(0);
+    transition: all .5s;
+}
+
+#nav.mobile .nav_checkbox:checked ~ ul {
+    transform: translateX(-10000px);
+    transition: all .5s;
+}
+
+#nav.mobile .nav_toggle {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    width: 48px;
+    text-align: center;
+    color: #fff;
+}
+
+#nav.mobile .nav_toggle:hover {
+    cursor: pointer;
+}
+
+#nav.mobile ul {
+    margin-top: 5px;
+    width: 100%;
+    height: calc(100vh - 55px);
+
+    background: #c077b4;
+    background: -webkit-linear-gradient(to right, #C077B4, #51B0B0);
+    background: linear-gradient(to right, #C077B4, #51B0B0);
+
+    overflow-y: auto;
+}
+
+#nav.mobile ul li {
+    display: block;
+    width: 100%;
+    margin-left: 5px;
+}
+
+#nav.mobile ul li.mobile_entry {
+    display: block;
+    height: 48px;
+}
+
+#nav.mobile ul li.mobile_entry:hover {
+    outline: 0;
+}
+
+/* Nav Intermediate */
+
+#nav.intermediate * {
+    transition: all 0s !important;
+}
+
+/*  */
+
+/* Keyframes */
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes shake-wrong {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+        background: #ED213A;
+        background: linear-gradient(to right, #ED213A, #93291E);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+        background: #ED213A;
+        background: linear-gradient(to right, #ED213A, #93291E);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+        background: #ED213A;
+        background: linear-gradient(to right, #ED213A, #93291E);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+        background: #ED213A;
+        background: linear-gradient(to right, #ED213A, #93291E);
+    }
+}
+
+/*AUTOGENERATED CODE, DO NOT MODIFY BY HAND*/
+/* Background Colors */
+.bac-col-1, .bac-col-1-hov:hover, html.dark .bac-col-1, html.dark .bac-col-1-hov:hover { background-image: linear-gradient(to right, #7474bf, #348ac7) !important; } .bac-col-2, .bac-col-2-hov:hover, html.dark .bac-col-2, html.dark .bac-col-2-hov:hover { background-image: linear-gradient(to right, #1488CC, #2B32B2) !important; } .bac-col-3, .bac-col-3-hov:hover, html.dark .bac-col-3, html.dark .bac-col-3-hov:hover { background-image: linear-gradient(to right, #8E2DE2, #4A00E0) !important; } .bac-col-4, .bac-col-4-hov:hover, html.dark .bac-col-4, html.dark .bac-col-4-hov:hover { background-image: linear-gradient(to right, #4CB8C4, #3CD3AD) !important; } .bac-col-5, .bac-col-5-hov:hover, html.dark .bac-col-5, html.dark .bac-col-5-hov:hover { background-image: linear-gradient(to right, #4776E6, #8E54E9) !important; } .bac-col-6, .bac-col-6-hov:hover, html.dark .bac-col-6, html.dark .bac-col-6-hov:hover { background-image: linear-gradient(to right, #FF512F, #DD2476) !important; } .bac-col-7, .bac-col-7-hov:hover, html.dark .bac-col-7, html.dark .bac-col-7-hov:hover { background-image: linear-gradient(to right, #fc00ff, #00dbde) !important; } .bac-col-8, .bac-col-8-hov:hover, html.dark .bac-col-8, html.dark .bac-col-8-hov:hover { background-image: linear-gradient(to right, #2b5876, #4e4376) !important; } .bac-col-discord1, .bac-col-discord1-hov:hover, html.dark .bac-col-discord1, html.dark .bac-col-discord1-hov:hover { background-image: linear-gradient(to right, #7289DA, #7289DA) !important; } .bac-col-good1, .bac-col-good1-hov:hover, html.dark .bac-col-good1, html.dark .bac-col-good1-hov:hover { background-image: linear-gradient(to right, #56ab2f, #a8e063) !important; } .bac-col-bad1, .bac-col-bad1-hov:hover, html.dark .bac-col-bad1, html.dark .bac-col-bad1-hov:hover { background-image: linear-gradient(to right, #ED213A, #93291E) !important; }
+/* Button Colors */
+html:not(.good-browser) button.col-1:not(.active):hover, html:not(.good-browser) input[type=submit].col-1:not(.active):hover, html:not(.good-browser) input[type=button].col-1:not(.active):hover, html:not(.good-browser) input[type=reset].col-1:not(.active):hover, html:not(.good-browser).dark button.col-1:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-1:not(.active):hover, html:not(.good-browser).dark input[type=button].col-1:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-1:not(.active):hover, html:not(.good-browser) button.col-1.active, html:not(.good-browser) input[type=submit].col-1.active, html:not(.good-browser) input[type=button].col-1.active, html:not(.good-browser) input[type=reset].col-1.active, html:not(.good-browser).dark button.col-1.active, html:not(.good-browser).dark input[type=submit].col-1.active, html:not(.good-browser).dark input[type=button].col-1.active, html:not(.good-browser).dark input[type=reset].col-1.active { background-image: linear-gradient(to right, #7474bf, #348ac7) !important; } html:not(.good-browser) button.col-2:not(.active):hover, html:not(.good-browser) input[type=submit].col-2:not(.active):hover, html:not(.good-browser) input[type=button].col-2:not(.active):hover, html:not(.good-browser) input[type=reset].col-2:not(.active):hover, html:not(.good-browser).dark button.col-2:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-2:not(.active):hover, html:not(.good-browser).dark input[type=button].col-2:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-2:not(.active):hover, html:not(.good-browser) button.col-2.active, html:not(.good-browser) input[type=submit].col-2.active, html:not(.good-browser) input[type=button].col-2.active, html:not(.good-browser) input[type=reset].col-2.active, html:not(.good-browser).dark button.col-2.active, html:not(.good-browser).dark input[type=submit].col-2.active, html:not(.good-browser).dark input[type=button].col-2.active, html:not(.good-browser).dark input[type=reset].col-2.active { background-image: linear-gradient(to right, #1488CC, #2B32B2) !important; } html:not(.good-browser) button.col-3:not(.active):hover, html:not(.good-browser) input[type=submit].col-3:not(.active):hover, html:not(.good-browser) input[type=button].col-3:not(.active):hover, html:not(.good-browser) input[type=reset].col-3:not(.active):hover, html:not(.good-browser).dark button.col-3:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-3:not(.active):hover, html:not(.good-browser).dark input[type=button].col-3:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-3:not(.active):hover, html:not(.good-browser) button.col-3.active, html:not(.good-browser) input[type=submit].col-3.active, html:not(.good-browser) input[type=button].col-3.active, html:not(.good-browser) input[type=reset].col-3.active, html:not(.good-browser).dark button.col-3.active, html:not(.good-browser).dark input[type=submit].col-3.active, html:not(.good-browser).dark input[type=button].col-3.active, html:not(.good-browser).dark input[type=reset].col-3.active { background-image: linear-gradient(to right, #8E2DE2, #4A00E0) !important; } html:not(.good-browser) button.col-4:not(.active):hover, html:not(.good-browser) input[type=submit].col-4:not(.active):hover, html:not(.good-browser) input[type=button].col-4:not(.active):hover, html:not(.good-browser) input[type=reset].col-4:not(.active):hover, html:not(.good-browser).dark button.col-4:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-4:not(.active):hover, html:not(.good-browser).dark input[type=button].col-4:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-4:not(.active):hover, html:not(.good-browser) button.col-4.active, html:not(.good-browser) input[type=submit].col-4.active, html:not(.good-browser) input[type=button].col-4.active, html:not(.good-browser) input[type=reset].col-4.active, html:not(.good-browser).dark button.col-4.active, html:not(.good-browser).dark input[type=submit].col-4.active, html:not(.good-browser).dark input[type=button].col-4.active, html:not(.good-browser).dark input[type=reset].col-4.active { background-image: linear-gradient(to right, #4CB8C4, #3CD3AD) !important; } html:not(.good-browser) button.col-5:not(.active):hover, html:not(.good-browser) input[type=submit].col-5:not(.active):hover, html:not(.good-browser) input[type=button].col-5:not(.active):hover, html:not(.good-browser) input[type=reset].col-5:not(.active):hover, html:not(.good-browser).dark button.col-5:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-5:not(.active):hover, html:not(.good-browser).dark input[type=button].col-5:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-5:not(.active):hover, html:not(.good-browser) button.col-5.active, html:not(.good-browser) input[type=submit].col-5.active, html:not(.good-browser) input[type=button].col-5.active, html:not(.good-browser) input[type=reset].col-5.active, html:not(.good-browser).dark button.col-5.active, html:not(.good-browser).dark input[type=submit].col-5.active, html:not(.good-browser).dark input[type=button].col-5.active, html:not(.good-browser).dark input[type=reset].col-5.active { background-image: linear-gradient(to right, #4776E6, #8E54E9) !important; } html:not(.good-browser) button.col-6:not(.active):hover, html:not(.good-browser) input[type=submit].col-6:not(.active):hover, html:not(.good-browser) input[type=button].col-6:not(.active):hover, html:not(.good-browser) input[type=reset].col-6:not(.active):hover, html:not(.good-browser).dark button.col-6:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-6:not(.active):hover, html:not(.good-browser).dark input[type=button].col-6:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-6:not(.active):hover, html:not(.good-browser) button.col-6.active, html:not(.good-browser) input[type=submit].col-6.active, html:not(.good-browser) input[type=button].col-6.active, html:not(.good-browser) input[type=reset].col-6.active, html:not(.good-browser).dark button.col-6.active, html:not(.good-browser).dark input[type=submit].col-6.active, html:not(.good-browser).dark input[type=button].col-6.active, html:not(.good-browser).dark input[type=reset].col-6.active { background-image: linear-gradient(to right, #FF512F, #DD2476) !important; } html:not(.good-browser) button.col-7:not(.active):hover, html:not(.good-browser) input[type=submit].col-7:not(.active):hover, html:not(.good-browser) input[type=button].col-7:not(.active):hover, html:not(.good-browser) input[type=reset].col-7:not(.active):hover, html:not(.good-browser).dark button.col-7:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-7:not(.active):hover, html:not(.good-browser).dark input[type=button].col-7:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-7:not(.active):hover, html:not(.good-browser) button.col-7.active, html:not(.good-browser) input[type=submit].col-7.active, html:not(.good-browser) input[type=button].col-7.active, html:not(.good-browser) input[type=reset].col-7.active, html:not(.good-browser).dark button.col-7.active, html:not(.good-browser).dark input[type=submit].col-7.active, html:not(.good-browser).dark input[type=button].col-7.active, html:not(.good-browser).dark input[type=reset].col-7.active { background-image: linear-gradient(to right, #fc00ff, #00dbde) !important; } html:not(.good-browser) button.col-8:not(.active):hover, html:not(.good-browser) input[type=submit].col-8:not(.active):hover, html:not(.good-browser) input[type=button].col-8:not(.active):hover, html:not(.good-browser) input[type=reset].col-8:not(.active):hover, html:not(.good-browser).dark button.col-8:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-8:not(.active):hover, html:not(.good-browser).dark input[type=button].col-8:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-8:not(.active):hover, html:not(.good-browser) button.col-8.active, html:not(.good-browser) input[type=submit].col-8.active, html:not(.good-browser) input[type=button].col-8.active, html:not(.good-browser) input[type=reset].col-8.active, html:not(.good-browser).dark button.col-8.active, html:not(.good-browser).dark input[type=submit].col-8.active, html:not(.good-browser).dark input[type=button].col-8.active, html:not(.good-browser).dark input[type=reset].col-8.active { background-image: linear-gradient(to right, #2b5876, #4e4376) !important; } html:not(.good-browser) button.col-discord:not(.active):hover, html:not(.good-browser) input[type=submit].col-discord:not(.active):hover, html:not(.good-browser) input[type=button].col-discord:not(.active):hover, html:not(.good-browser) input[type=reset].col-discord:not(.active):hover, html:not(.good-browser).dark button.col-discord:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-discord:not(.active):hover, html:not(.good-browser).dark input[type=button].col-discord:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-discord:not(.active):hover, html:not(.good-browser) button.col-discord.active, html:not(.good-browser) input[type=submit].col-discord.active, html:not(.good-browser) input[type=button].col-discord.active, html:not(.good-browser) input[type=reset].col-discord.active, html:not(.good-browser).dark button.col-discord.active, html:not(.good-browser).dark input[type=submit].col-discord.active, html:not(.good-browser).dark input[type=button].col-discord.active, html:not(.good-browser).dark input[type=reset].col-discord.active { background-image: linear-gradient(to right, #7289DA, #7289DA) !important; } html:not(.good-browser) button.col-good:not(.active):hover, html:not(.good-browser) input[type=submit].col-good:not(.active):hover, html:not(.good-browser) input[type=button].col-good:not(.active):hover, html:not(.good-browser) input[type=reset].col-good:not(.active):hover, html:not(.good-browser).dark button.col-good:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-good:not(.active):hover, html:not(.good-browser).dark input[type=button].col-good:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-good:not(.active):hover, html:not(.good-browser) button.col-good.active, html:not(.good-browser) input[type=submit].col-good.active, html:not(.good-browser) input[type=button].col-good.active, html:not(.good-browser) input[type=reset].col-good.active, html:not(.good-browser).dark button.col-good.active, html:not(.good-browser).dark input[type=submit].col-good.active, html:not(.good-browser).dark input[type=button].col-good.active, html:not(.good-browser).dark input[type=reset].col-good.active { background-image: linear-gradient(to right, #56ab2f, #a8e063) !important; } html:not(.good-browser) button.col-bad:not(.active):hover, html:not(.good-browser) input[type=submit].col-bad:not(.active):hover, html:not(.good-browser) input[type=button].col-bad:not(.active):hover, html:not(.good-browser) input[type=reset].col-bad:not(.active):hover, html:not(.good-browser).dark button.col-bad:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-bad:not(.active):hover, html:not(.good-browser).dark input[type=button].col-bad:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-bad:not(.active):hover, html:not(.good-browser) button.col-bad.active, html:not(.good-browser) input[type=submit].col-bad.active, html:not(.good-browser) input[type=button].col-bad.active, html:not(.good-browser) input[type=reset].col-bad.active, html:not(.good-browser).dark button.col-bad.active, html:not(.good-browser).dark input[type=submit].col-bad.active, html:not(.good-browser).dark input[type=button].col-bad.active, html:not(.good-browser).dark input[type=reset].col-bad.active { background-image: linear-gradient(to right, #ED213A, #93291E) !important; }
+/* Better Button Colors */
+html.good-browser button.col-1, html.good-browser input[type=submit].col-1, html.good-browser input[type=button].col-1, html.good-browser input[type=reset].col-1 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #7474bf, #348ac7 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-1, html.good-browser.dark input[type=submit].col-1, html.good-browser.dark input[type=button].col-1, html.good-browser.dark input[type=reset].col-1 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #7474bf, #348ac7 50%, #2f2f2f 50%) !important; } html.good-browser button.col-2, html.good-browser input[type=submit].col-2, html.good-browser input[type=button].col-2, html.good-browser input[type=reset].col-2 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #1488CC, #2B32B2 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-2, html.good-browser.dark input[type=submit].col-2, html.good-browser.dark input[type=button].col-2, html.good-browser.dark input[type=reset].col-2 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #1488CC, #2B32B2 50%, #2f2f2f 50%) !important; } html.good-browser button.col-3, html.good-browser input[type=submit].col-3, html.good-browser input[type=button].col-3, html.good-browser input[type=reset].col-3 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #8E2DE2, #4A00E0 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-3, html.good-browser.dark input[type=submit].col-3, html.good-browser.dark input[type=button].col-3, html.good-browser.dark input[type=reset].col-3 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #8E2DE2, #4A00E0 50%, #2f2f2f 50%) !important; } html.good-browser button.col-4, html.good-browser input[type=submit].col-4, html.good-browser input[type=button].col-4, html.good-browser input[type=reset].col-4 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #4CB8C4, #3CD3AD 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-4, html.good-browser.dark input[type=submit].col-4, html.good-browser.dark input[type=button].col-4, html.good-browser.dark input[type=reset].col-4 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #4CB8C4, #3CD3AD 50%, #2f2f2f 50%) !important; } html.good-browser button.col-5, html.good-browser input[type=submit].col-5, html.good-browser input[type=button].col-5, html.good-browser input[type=reset].col-5 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #4776E6, #8E54E9 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-5, html.good-browser.dark input[type=submit].col-5, html.good-browser.dark input[type=button].col-5, html.good-browser.dark input[type=reset].col-5 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #4776E6, #8E54E9 50%, #2f2f2f 50%) !important; } html.good-browser button.col-6, html.good-browser input[type=submit].col-6, html.good-browser input[type=button].col-6, html.good-browser input[type=reset].col-6 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #FF512F, #DD2476 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-6, html.good-browser.dark input[type=submit].col-6, html.good-browser.dark input[type=button].col-6, html.good-browser.dark input[type=reset].col-6 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #FF512F, #DD2476 50%, #2f2f2f 50%) !important; } html.good-browser button.col-7, html.good-browser input[type=submit].col-7, html.good-browser input[type=button].col-7, html.good-browser input[type=reset].col-7 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #fc00ff, #00dbde 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-7, html.good-browser.dark input[type=submit].col-7, html.good-browser.dark input[type=button].col-7, html.good-browser.dark input[type=reset].col-7 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #fc00ff, #00dbde 50%, #2f2f2f 50%) !important; } html.good-browser button.col-8, html.good-browser input[type=submit].col-8, html.good-browser input[type=button].col-8, html.good-browser input[type=reset].col-8 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #2b5876, #4e4376 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-8, html.good-browser.dark input[type=submit].col-8, html.good-browser.dark input[type=button].col-8, html.good-browser.dark input[type=reset].col-8 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #2b5876, #4e4376 50%, #2f2f2f 50%) !important; } html.good-browser button.col-discord, html.good-browser input[type=submit].col-discord, html.good-browser input[type=button].col-discord, html.good-browser input[type=reset].col-discord { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #7289DA, #7289DA 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-discord, html.good-browser.dark input[type=submit].col-discord, html.good-browser.dark input[type=button].col-discord, html.good-browser.dark input[type=reset].col-discord { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #7289DA, #7289DA 50%, #2f2f2f 50%) !important; } html.good-browser button.col-good, html.good-browser input[type=submit].col-good, html.good-browser input[type=button].col-good, html.good-browser input[type=reset].col-good { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #56ab2f, #a8e063 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-good, html.good-browser.dark input[type=submit].col-good, html.good-browser.dark input[type=button].col-good, html.good-browser.dark input[type=reset].col-good { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #56ab2f, #a8e063 50%, #2f2f2f 50%) !important; } html.good-browser button.col-bad, html.good-browser input[type=submit].col-bad, html.good-browser input[type=button].col-bad, html.good-browser input[type=reset].col-bad { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #ED213A, #93291E 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-bad, html.good-browser.dark input[type=submit].col-bad, html.good-browser.dark input[type=button].col-bad, html.good-browser.dark input[type=reset].col-bad { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #ED213A, #93291E 50%, #2f2f2f 50%) !important; }
