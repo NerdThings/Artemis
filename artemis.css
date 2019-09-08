@@ -68,16 +68,17 @@ h6 {
 /* Body colouring */
 
 body {
-    background: #F5F7FA;
-    background: -webkit-linear-gradient(to bottom right,#F5F7FA,#B8C6DB);
-    background: linear-gradient(to bottom right, #F5F7FA, #B8C6DB);
+    min-height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: #B8C6DB;
     color: #000;
 }
 
 html.dark body {
     background: #3f3f3f;
-    background: -webkit-linear-gradient(to bottom right,#5b5b5b,#3f3f3f);
-    background: linear-gradient(to bottom right,#5b5b5b,#3f3f3f);
     color: #fff;
 }
 
@@ -685,8 +686,8 @@ main footer {
 
 footer {
     padding: 25px;
-    background: rgba(0, 0, 0, 0.05);
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+    background: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
 }
 
 footer ul.quick_links {
