@@ -11,6 +11,10 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+body {
+    height: 100vh;
+}
+
 body,
 html,
 h1,
