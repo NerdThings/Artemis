@@ -3,10 +3,12 @@
  * Copyright (C) NerdThings 2019
  */
 
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
 /* General Styles */
 
 * {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 body,
@@ -20,6 +22,34 @@ h6,
 p {
     margin: 0;
     padding: 0;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+h1 {
+    font-size: 2.1em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.27em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5 {
+    font-size: 0.93em;
+}
+
+h6 {
+    font-size: 0.77em;
 }
 
 /* Preload */
@@ -72,6 +102,13 @@ html.dark a:hover {
 table {
     width: 100%;
     border-collapse:collapse;
+    background: #F5F7FA;
+    border-radius: 5px;
+    margin: 12px;
+}
+
+html.dark table {
+    background: #2f2f2f;
 }
 
 table tbody,
@@ -273,12 +310,48 @@ input[type=week],
 input[type=datetime],
 input[type=datetime-local],
 textarea {
-    background: none;
-    border: 2px solid #51B0B0;
+    background: #F5F7FA;
     outline: none;
-    border-radius: 15px;
+    border: 0;
+    border-radius: 5px;
     padding: 5px;
-    margin-bottom: 5px;
+    margin: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    transition: all 0.2s;
+}
+
+input[type=text]:hover,
+input[type=password]:hover,
+input[type=email]:hover,
+input[type=tel]:hover,
+input[type=search]:hover,
+input[type=number]:hover,
+input[type=url]:hover,
+input[type=date]:hover,
+input[type=month]:hover,
+input[type=week]:hover,
+input[type=datetime]:hover,
+input[type=datetime-local]:hover,
+textarea:hover {
+    background: #cacaca;
+    transition: all 0.5s;
+}
+
+html.dark input[type=text]:hover,
+html.dark input[type=password]:hover,
+html.dark input[type=email]:hover,
+html.dark input[type=tel]:hover,
+html.dark input[type=search]:hover,
+html.dark input[type=number]:hover,
+html.dark input[type=url]:hover,
+html.dark input[type=date]:hover,
+html.dark input[type=month]:hover,
+html.dark input[type=week]:hover,
+html.dark input[type=datetime]:hover,
+html.dark input[type=datetime-local]:hover,
+html.dark textarea:hover {
+    background: #212121;
 }
 
 input[type=text]::placeholder,
@@ -297,22 +370,6 @@ textarea::placeholder {
     color: #595959;
 }
 
-input[type=text].large,
-input[type=password].large,
-input[type=email].large,
-input[type=tel].large,
-input[type=search].large,
-input[type=number].large,
-input[type=url].large,
-input[type=date].large,
-input[type=month].large,
-input[type=week].large,
-input[type=datetime].large,
-input[type=datetime-local].large,
-textarea.large {
-    padding: 10px 15px;
-}
-
 html.dark input[type=text],
 html.dark input[type=password],
 html.dark input[type=email],
@@ -326,6 +383,7 @@ html.dark input[type=week],
 html.dark input[type=datetime],
 html.dark input[type=datetime-local],
 html.dark textarea {
+    background: #2f2f2f;
     color: #fff;
 }
 
@@ -345,11 +403,6 @@ html.dark textarea::placeholder {
     color: #b7b7b7;
 }
 
-input[type=search]::-webkit-search-cancel-button{
-    display: none;
-    /* TODO: Make this look nice */
-}
-
 input[type=text].is-error,
 input[type=password].is-error,
 input[type=email].is-error,
@@ -358,7 +411,7 @@ input[type=search].is-error,
 input[type=number].is-error,
 input[type=url].is-error,
 textarea.is-error {
-    border-color: #ED213A;
+    border: 1px solid #ED213A;
 }
 
 input[type=text].is-valid,
@@ -369,7 +422,7 @@ input[type=search].is-valid,
 input[type=number].is-valid,
 input[type=url].is-valid,
 textarea.is-valid {
-    border-color: #56ab2f;
+    border: 1px solid #56ab2f;
 }
 
 input[type=color] {
@@ -387,8 +440,8 @@ input[type=color]::-webkit-color-swatch-wrapper {
 }
 
 input[type=color]::-webkit-color-swatch {
-    border: 2px solid #51B0B0;
-    border-radius: 15px;
+    border: 2px solid #2f2f2f;
+    border-radius: 5px;
 }
 
 /* Range Input */
@@ -404,37 +457,63 @@ input[type=range]:focus {
 
 input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
-    height: 8.5px;
+    height: 8px;
     cursor: pointer;
-    border: 2px solid #C077B4;
+    background: #2f2f2f;
     border-radius: 5px;
 }
 
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 36px;
+    height: 16px;
     width: 16px;
     border-radius: 15px;
     background: #51B0B0;
     cursor: pointer;
-    margin-top: -15px;
+    margin-top: -4px;
 }
 
 input[type=range]::-moz-range-track {
     width: 100%;
-    height: 8.5px;
+    height: 8px;
     cursor: pointer;
-    border: 2px solid #C077B4;
+    background: #2f2f2f;
     border-radius: 5px;
 }
 input[type=range]::-moz-range-thumb {
-    height: 36px;
+    height: 16px;
     width: 16px;
     border-radius: 15px;
     background: #51B0B0;
     cursor: pointer;
-    margin-top: -15px;
+    margin-top: -4px;
     border: none;
+}
+
+/* Remove spinners */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Date inputs */
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=month]::-webkit-inner-spin-button,
+input[type=week]::-webkit-inner-spin-button,
+input[type=datetime]::-webkit-inner-spin-button,
+input[type=datetime-local]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator,
+input[type=month]::-webkit-calendar-picker-indicator,
+input[type=week]::-webkit-calendar-picker-indicator,
+input[type=datetime]::-webkit-calendar-picker-indicator,
+input[type=datetime-local]::-webkit-calendar-picker-indicator{
+    background: transparent;
 }
 
 /* Box Model */
@@ -543,7 +622,6 @@ header:not(.landing) {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
 
     padding: 5px;
     margin-bottom: 15px;
@@ -581,7 +659,8 @@ header.all-corners {
 /* Main page padding */
 
 main {
-    padding: 0 15px 15px 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 main header,
@@ -636,7 +715,6 @@ footer a {
     background: -webkit-linear-gradient(to right, #C077B4, #51B0B0);
     background: linear-gradient(to right, #C077B4, #51B0B0);
 
-    padding: 5px;
     height: 48px;
     z-index: 200;
     color: #000;
@@ -677,7 +755,7 @@ footer a {
 
 #nav span img {
     float: left;
-    height: 50px;
+    height: 48px;
     margin-right: 5px;
 }
 
@@ -689,7 +767,6 @@ footer a {
     list-style-type: none;
     height: 48px;
     float: right;
-    padding-right: 10px;
     margin: 0;
 }
 
@@ -712,7 +789,7 @@ footer a {
     line-height: 48px;
     padding: 0 12px;
     outline: 0 solid white;
-    margin: 0 5px;
+    transition: all 0.2s;
 }
 
 #nav ul li a i {
@@ -724,7 +801,8 @@ footer a {
 html.dark #nav ul li a:hover {
     color: #fff;
     border: 0;
-    outline: 1px solid white;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.1s;
 }
 
 #nav ul li:hover ul {
@@ -736,7 +814,7 @@ html.dark #nav ul li a:hover {
 
 .nav-spacer {
     display: block;
-    height: 50px;
+    height: 48px;
 }
 
 /* Mobile Nav */
@@ -782,9 +860,8 @@ html.dark #nav.mobile li{
 }
 
 #nav.mobile ul {
-    margin-top: 5px;
     width: 100%;
-    height: calc(100vh - 55px);
+    height: calc(100vh - 48px);
 
     background: #c077b4;
     background: -webkit-linear-gradient(to right, #C077B4, #51B0B0);
@@ -796,7 +873,6 @@ html.dark #nav.mobile li{
 #nav.mobile ul li {
     display: block;
     width: 100%;
-    margin-left: 5px;
 }
 
 #nav.mobile ul li.mobile_entry {
@@ -862,10 +938,28 @@ html.dark #nav.mobile li{
     }
 }
 
+/* Scrollbars */
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #5e5e5e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a1a1a1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
 /*AUTOGENERATED CODE, DO NOT MODIFY BY HAND*/
 /* Background Colors */
-.bac-col-1, .bac-col-1-hov:hover, html.dark .bac-col-1, html.dark .bac-col-1-hov:hover { background-image: linear-gradient(to right, #7474bf, #348ac7) !important; } .bac-col-2, .bac-col-2-hov:hover, html.dark .bac-col-2, html.dark .bac-col-2-hov:hover { background-image: linear-gradient(to right, #1488CC, #2B32B2) !important; } .bac-col-3, .bac-col-3-hov:hover, html.dark .bac-col-3, html.dark .bac-col-3-hov:hover { background-image: linear-gradient(to right, #8E2DE2, #4A00E0) !important; } .bac-col-4, .bac-col-4-hov:hover, html.dark .bac-col-4, html.dark .bac-col-4-hov:hover { background-image: linear-gradient(to right, #4CB8C4, #3CD3AD) !important; } .bac-col-5, .bac-col-5-hov:hover, html.dark .bac-col-5, html.dark .bac-col-5-hov:hover { background-image: linear-gradient(to right, #4776E6, #8E54E9) !important; } .bac-col-6, .bac-col-6-hov:hover, html.dark .bac-col-6, html.dark .bac-col-6-hov:hover { background-image: linear-gradient(to right, #FF512F, #DD2476) !important; } .bac-col-7, .bac-col-7-hov:hover, html.dark .bac-col-7, html.dark .bac-col-7-hov:hover { background-image: linear-gradient(to right, #fc00ff, #00dbde) !important; } .bac-col-8, .bac-col-8-hov:hover, html.dark .bac-col-8, html.dark .bac-col-8-hov:hover { background-image: linear-gradient(to right, #2b5876, #4e4376) !important; } .bac-col-discord1, .bac-col-discord1-hov:hover, html.dark .bac-col-discord1, html.dark .bac-col-discord1-hov:hover { background-image: linear-gradient(to right, #7289DA, #7289DA) !important; } .bac-col-good1, .bac-col-good1-hov:hover, html.dark .bac-col-good1, html.dark .bac-col-good1-hov:hover { background-image: linear-gradient(to right, #56ab2f, #a8e063) !important; } .bac-col-bad1, .bac-col-bad1-hov:hover, html.dark .bac-col-bad1, html.dark .bac-col-bad1-hov:hover { background-image: linear-gradient(to right, #ED213A, #93291E) !important; }
+.bac-col-1, .bac-col-1-hov:hover, html.dark .bac-col-1, html.dark .bac-col-1-hov:hover { background-image: linear-gradient(to right, #7474bf, #348ac7) !important; } .bac-col-2, .bac-col-2-hov:hover, html.dark .bac-col-2, html.dark .bac-col-2-hov:hover { background-image: linear-gradient(to right, #1488CC, #2B32B2) !important; } .bac-col-3, .bac-col-3-hov:hover, html.dark .bac-col-3, html.dark .bac-col-3-hov:hover { background-image: linear-gradient(to right, #8E2DE2, #4A00E0) !important; } .bac-col-4, .bac-col-4-hov:hover, html.dark .bac-col-4, html.dark .bac-col-4-hov:hover { background-image: linear-gradient(to right, #4CB8C4, #3CD3AD) !important; } .bac-col-5, .bac-col-5-hov:hover, html.dark .bac-col-5, html.dark .bac-col-5-hov:hover { background-image: linear-gradient(to right, #4776E6, #8E54E9) !important; } .bac-col-6, .bac-col-6-hov:hover, html.dark .bac-col-6, html.dark .bac-col-6-hov:hover { background-image: linear-gradient(to right, #FF512F, #ff2f2f) !important; } .bac-col-7, .bac-col-7-hov:hover, html.dark .bac-col-7, html.dark .bac-col-7-hov:hover { background-image: linear-gradient(to right, #DA22FF, #9733EE) !important; } .bac-col-8, .bac-col-8-hov:hover, html.dark .bac-col-8, html.dark .bac-col-8-hov:hover { background-image: linear-gradient(to right, #2b5876, #4e4376) !important; } .bac-col-discord1, .bac-col-discord1-hov:hover, html.dark .bac-col-discord1, html.dark .bac-col-discord1-hov:hover { background-image: linear-gradient(to right, #7289DA, #7289DA) !important; } .bac-col-good1, .bac-col-good1-hov:hover, html.dark .bac-col-good1, html.dark .bac-col-good1-hov:hover { background-image: linear-gradient(to right, #56ab2f, #a8e063) !important; } .bac-col-bad1, .bac-col-bad1-hov:hover, html.dark .bac-col-bad1, html.dark .bac-col-bad1-hov:hover { background-image: linear-gradient(to right, #ED213A, #93291E) !important; }
 /* Button Colors */
-html:not(.good-browser) button.col-1:not(.active):hover, html:not(.good-browser) input[type=submit].col-1:not(.active):hover, html:not(.good-browser) input[type=button].col-1:not(.active):hover, html:not(.good-browser) input[type=reset].col-1:not(.active):hover, html:not(.good-browser).dark button.col-1:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-1:not(.active):hover, html:not(.good-browser).dark input[type=button].col-1:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-1:not(.active):hover, html:not(.good-browser) button.col-1.active, html:not(.good-browser) input[type=submit].col-1.active, html:not(.good-browser) input[type=button].col-1.active, html:not(.good-browser) input[type=reset].col-1.active, html:not(.good-browser).dark button.col-1.active, html:not(.good-browser).dark input[type=submit].col-1.active, html:not(.good-browser).dark input[type=button].col-1.active, html:not(.good-browser).dark input[type=reset].col-1.active { background-image: linear-gradient(to right, #7474bf, #348ac7) !important; } html:not(.good-browser) button.col-2:not(.active):hover, html:not(.good-browser) input[type=submit].col-2:not(.active):hover, html:not(.good-browser) input[type=button].col-2:not(.active):hover, html:not(.good-browser) input[type=reset].col-2:not(.active):hover, html:not(.good-browser).dark button.col-2:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-2:not(.active):hover, html:not(.good-browser).dark input[type=button].col-2:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-2:not(.active):hover, html:not(.good-browser) button.col-2.active, html:not(.good-browser) input[type=submit].col-2.active, html:not(.good-browser) input[type=button].col-2.active, html:not(.good-browser) input[type=reset].col-2.active, html:not(.good-browser).dark button.col-2.active, html:not(.good-browser).dark input[type=submit].col-2.active, html:not(.good-browser).dark input[type=button].col-2.active, html:not(.good-browser).dark input[type=reset].col-2.active { background-image: linear-gradient(to right, #1488CC, #2B32B2) !important; } html:not(.good-browser) button.col-3:not(.active):hover, html:not(.good-browser) input[type=submit].col-3:not(.active):hover, html:not(.good-browser) input[type=button].col-3:not(.active):hover, html:not(.good-browser) input[type=reset].col-3:not(.active):hover, html:not(.good-browser).dark button.col-3:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-3:not(.active):hover, html:not(.good-browser).dark input[type=button].col-3:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-3:not(.active):hover, html:not(.good-browser) button.col-3.active, html:not(.good-browser) input[type=submit].col-3.active, html:not(.good-browser) input[type=button].col-3.active, html:not(.good-browser) input[type=reset].col-3.active, html:not(.good-browser).dark button.col-3.active, html:not(.good-browser).dark input[type=submit].col-3.active, html:not(.good-browser).dark input[type=button].col-3.active, html:not(.good-browser).dark input[type=reset].col-3.active { background-image: linear-gradient(to right, #8E2DE2, #4A00E0) !important; } html:not(.good-browser) button.col-4:not(.active):hover, html:not(.good-browser) input[type=submit].col-4:not(.active):hover, html:not(.good-browser) input[type=button].col-4:not(.active):hover, html:not(.good-browser) input[type=reset].col-4:not(.active):hover, html:not(.good-browser).dark button.col-4:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-4:not(.active):hover, html:not(.good-browser).dark input[type=button].col-4:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-4:not(.active):hover, html:not(.good-browser) button.col-4.active, html:not(.good-browser) input[type=submit].col-4.active, html:not(.good-browser) input[type=button].col-4.active, html:not(.good-browser) input[type=reset].col-4.active, html:not(.good-browser).dark button.col-4.active, html:not(.good-browser).dark input[type=submit].col-4.active, html:not(.good-browser).dark input[type=button].col-4.active, html:not(.good-browser).dark input[type=reset].col-4.active { background-image: linear-gradient(to right, #4CB8C4, #3CD3AD) !important; } html:not(.good-browser) button.col-5:not(.active):hover, html:not(.good-browser) input[type=submit].col-5:not(.active):hover, html:not(.good-browser) input[type=button].col-5:not(.active):hover, html:not(.good-browser) input[type=reset].col-5:not(.active):hover, html:not(.good-browser).dark button.col-5:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-5:not(.active):hover, html:not(.good-browser).dark input[type=button].col-5:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-5:not(.active):hover, html:not(.good-browser) button.col-5.active, html:not(.good-browser) input[type=submit].col-5.active, html:not(.good-browser) input[type=button].col-5.active, html:not(.good-browser) input[type=reset].col-5.active, html:not(.good-browser).dark button.col-5.active, html:not(.good-browser).dark input[type=submit].col-5.active, html:not(.good-browser).dark input[type=button].col-5.active, html:not(.good-browser).dark input[type=reset].col-5.active { background-image: linear-gradient(to right, #4776E6, #8E54E9) !important; } html:not(.good-browser) button.col-6:not(.active):hover, html:not(.good-browser) input[type=submit].col-6:not(.active):hover, html:not(.good-browser) input[type=button].col-6:not(.active):hover, html:not(.good-browser) input[type=reset].col-6:not(.active):hover, html:not(.good-browser).dark button.col-6:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-6:not(.active):hover, html:not(.good-browser).dark input[type=button].col-6:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-6:not(.active):hover, html:not(.good-browser) button.col-6.active, html:not(.good-browser) input[type=submit].col-6.active, html:not(.good-browser) input[type=button].col-6.active, html:not(.good-browser) input[type=reset].col-6.active, html:not(.good-browser).dark button.col-6.active, html:not(.good-browser).dark input[type=submit].col-6.active, html:not(.good-browser).dark input[type=button].col-6.active, html:not(.good-browser).dark input[type=reset].col-6.active { background-image: linear-gradient(to right, #FF512F, #DD2476) !important; } html:not(.good-browser) button.col-7:not(.active):hover, html:not(.good-browser) input[type=submit].col-7:not(.active):hover, html:not(.good-browser) input[type=button].col-7:not(.active):hover, html:not(.good-browser) input[type=reset].col-7:not(.active):hover, html:not(.good-browser).dark button.col-7:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-7:not(.active):hover, html:not(.good-browser).dark input[type=button].col-7:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-7:not(.active):hover, html:not(.good-browser) button.col-7.active, html:not(.good-browser) input[type=submit].col-7.active, html:not(.good-browser) input[type=button].col-7.active, html:not(.good-browser) input[type=reset].col-7.active, html:not(.good-browser).dark button.col-7.active, html:not(.good-browser).dark input[type=submit].col-7.active, html:not(.good-browser).dark input[type=button].col-7.active, html:not(.good-browser).dark input[type=reset].col-7.active { background-image: linear-gradient(to right, #fc00ff, #00dbde) !important; } html:not(.good-browser) button.col-8:not(.active):hover, html:not(.good-browser) input[type=submit].col-8:not(.active):hover, html:not(.good-browser) input[type=button].col-8:not(.active):hover, html:not(.good-browser) input[type=reset].col-8:not(.active):hover, html:not(.good-browser).dark button.col-8:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-8:not(.active):hover, html:not(.good-browser).dark input[type=button].col-8:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-8:not(.active):hover, html:not(.good-browser) button.col-8.active, html:not(.good-browser) input[type=submit].col-8.active, html:not(.good-browser) input[type=button].col-8.active, html:not(.good-browser) input[type=reset].col-8.active, html:not(.good-browser).dark button.col-8.active, html:not(.good-browser).dark input[type=submit].col-8.active, html:not(.good-browser).dark input[type=button].col-8.active, html:not(.good-browser).dark input[type=reset].col-8.active { background-image: linear-gradient(to right, #2b5876, #4e4376) !important; } html:not(.good-browser) button.col-discord:not(.active):hover, html:not(.good-browser) input[type=submit].col-discord:not(.active):hover, html:not(.good-browser) input[type=button].col-discord:not(.active):hover, html:not(.good-browser) input[type=reset].col-discord:not(.active):hover, html:not(.good-browser).dark button.col-discord:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-discord:not(.active):hover, html:not(.good-browser).dark input[type=button].col-discord:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-discord:not(.active):hover, html:not(.good-browser) button.col-discord.active, html:not(.good-browser) input[type=submit].col-discord.active, html:not(.good-browser) input[type=button].col-discord.active, html:not(.good-browser) input[type=reset].col-discord.active, html:not(.good-browser).dark button.col-discord.active, html:not(.good-browser).dark input[type=submit].col-discord.active, html:not(.good-browser).dark input[type=button].col-discord.active, html:not(.good-browser).dark input[type=reset].col-discord.active { background-image: linear-gradient(to right, #7289DA, #7289DA) !important; } html:not(.good-browser) button.col-good:not(.active):hover, html:not(.good-browser) input[type=submit].col-good:not(.active):hover, html:not(.good-browser) input[type=button].col-good:not(.active):hover, html:not(.good-browser) input[type=reset].col-good:not(.active):hover, html:not(.good-browser).dark button.col-good:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-good:not(.active):hover, html:not(.good-browser).dark input[type=button].col-good:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-good:not(.active):hover, html:not(.good-browser) button.col-good.active, html:not(.good-browser) input[type=submit].col-good.active, html:not(.good-browser) input[type=button].col-good.active, html:not(.good-browser) input[type=reset].col-good.active, html:not(.good-browser).dark button.col-good.active, html:not(.good-browser).dark input[type=submit].col-good.active, html:not(.good-browser).dark input[type=button].col-good.active, html:not(.good-browser).dark input[type=reset].col-good.active { background-image: linear-gradient(to right, #56ab2f, #a8e063) !important; } html:not(.good-browser) button.col-bad:not(.active):hover, html:not(.good-browser) input[type=submit].col-bad:not(.active):hover, html:not(.good-browser) input[type=button].col-bad:not(.active):hover, html:not(.good-browser) input[type=reset].col-bad:not(.active):hover, html:not(.good-browser).dark button.col-bad:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-bad:not(.active):hover, html:not(.good-browser).dark input[type=button].col-bad:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-bad:not(.active):hover, html:not(.good-browser) button.col-bad.active, html:not(.good-browser) input[type=submit].col-bad.active, html:not(.good-browser) input[type=button].col-bad.active, html:not(.good-browser) input[type=reset].col-bad.active, html:not(.good-browser).dark button.col-bad.active, html:not(.good-browser).dark input[type=submit].col-bad.active, html:not(.good-browser).dark input[type=button].col-bad.active, html:not(.good-browser).dark input[type=reset].col-bad.active { background-image: linear-gradient(to right, #ED213A, #93291E) !important; }
+html:not(.good-browser) button.col-1:not(.active):hover, html:not(.good-browser) input[type=submit].col-1:not(.active):hover, html:not(.good-browser) input[type=button].col-1:not(.active):hover, html:not(.good-browser) input[type=reset].col-1:not(.active):hover, html:not(.good-browser).dark button.col-1:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-1:not(.active):hover, html:not(.good-browser).dark input[type=button].col-1:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-1:not(.active):hover, html:not(.good-browser) button.col-1.active, html:not(.good-browser) input[type=submit].col-1.active, html:not(.good-browser) input[type=button].col-1.active, html:not(.good-browser) input[type=reset].col-1.active, html:not(.good-browser).dark button.col-1.active, html:not(.good-browser).dark input[type=submit].col-1.active, html:not(.good-browser).dark input[type=button].col-1.active, html:not(.good-browser).dark input[type=reset].col-1.active { background-image: linear-gradient(to right, #7474bf, #348ac7) !important; } html:not(.good-browser) button.col-2:not(.active):hover, html:not(.good-browser) input[type=submit].col-2:not(.active):hover, html:not(.good-browser) input[type=button].col-2:not(.active):hover, html:not(.good-browser) input[type=reset].col-2:not(.active):hover, html:not(.good-browser).dark button.col-2:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-2:not(.active):hover, html:not(.good-browser).dark input[type=button].col-2:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-2:not(.active):hover, html:not(.good-browser) button.col-2.active, html:not(.good-browser) input[type=submit].col-2.active, html:not(.good-browser) input[type=button].col-2.active, html:not(.good-browser) input[type=reset].col-2.active, html:not(.good-browser).dark button.col-2.active, html:not(.good-browser).dark input[type=submit].col-2.active, html:not(.good-browser).dark input[type=button].col-2.active, html:not(.good-browser).dark input[type=reset].col-2.active { background-image: linear-gradient(to right, #1488CC, #2B32B2) !important; } html:not(.good-browser) button.col-3:not(.active):hover, html:not(.good-browser) input[type=submit].col-3:not(.active):hover, html:not(.good-browser) input[type=button].col-3:not(.active):hover, html:not(.good-browser) input[type=reset].col-3:not(.active):hover, html:not(.good-browser).dark button.col-3:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-3:not(.active):hover, html:not(.good-browser).dark input[type=button].col-3:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-3:not(.active):hover, html:not(.good-browser) button.col-3.active, html:not(.good-browser) input[type=submit].col-3.active, html:not(.good-browser) input[type=button].col-3.active, html:not(.good-browser) input[type=reset].col-3.active, html:not(.good-browser).dark button.col-3.active, html:not(.good-browser).dark input[type=submit].col-3.active, html:not(.good-browser).dark input[type=button].col-3.active, html:not(.good-browser).dark input[type=reset].col-3.active { background-image: linear-gradient(to right, #8E2DE2, #4A00E0) !important; } html:not(.good-browser) button.col-4:not(.active):hover, html:not(.good-browser) input[type=submit].col-4:not(.active):hover, html:not(.good-browser) input[type=button].col-4:not(.active):hover, html:not(.good-browser) input[type=reset].col-4:not(.active):hover, html:not(.good-browser).dark button.col-4:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-4:not(.active):hover, html:not(.good-browser).dark input[type=button].col-4:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-4:not(.active):hover, html:not(.good-browser) button.col-4.active, html:not(.good-browser) input[type=submit].col-4.active, html:not(.good-browser) input[type=button].col-4.active, html:not(.good-browser) input[type=reset].col-4.active, html:not(.good-browser).dark button.col-4.active, html:not(.good-browser).dark input[type=submit].col-4.active, html:not(.good-browser).dark input[type=button].col-4.active, html:not(.good-browser).dark input[type=reset].col-4.active { background-image: linear-gradient(to right, #4CB8C4, #3CD3AD) !important; } html:not(.good-browser) button.col-5:not(.active):hover, html:not(.good-browser) input[type=submit].col-5:not(.active):hover, html:not(.good-browser) input[type=button].col-5:not(.active):hover, html:not(.good-browser) input[type=reset].col-5:not(.active):hover, html:not(.good-browser).dark button.col-5:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-5:not(.active):hover, html:not(.good-browser).dark input[type=button].col-5:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-5:not(.active):hover, html:not(.good-browser) button.col-5.active, html:not(.good-browser) input[type=submit].col-5.active, html:not(.good-browser) input[type=button].col-5.active, html:not(.good-browser) input[type=reset].col-5.active, html:not(.good-browser).dark button.col-5.active, html:not(.good-browser).dark input[type=submit].col-5.active, html:not(.good-browser).dark input[type=button].col-5.active, html:not(.good-browser).dark input[type=reset].col-5.active { background-image: linear-gradient(to right, #4776E6, #8E54E9) !important; } html:not(.good-browser) button.col-6:not(.active):hover, html:not(.good-browser) input[type=submit].col-6:not(.active):hover, html:not(.good-browser) input[type=button].col-6:not(.active):hover, html:not(.good-browser) input[type=reset].col-6:not(.active):hover, html:not(.good-browser).dark button.col-6:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-6:not(.active):hover, html:not(.good-browser).dark input[type=button].col-6:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-6:not(.active):hover, html:not(.good-browser) button.col-6.active, html:not(.good-browser) input[type=submit].col-6.active, html:not(.good-browser) input[type=button].col-6.active, html:not(.good-browser) input[type=reset].col-6.active, html:not(.good-browser).dark button.col-6.active, html:not(.good-browser).dark input[type=submit].col-6.active, html:not(.good-browser).dark input[type=button].col-6.active, html:not(.good-browser).dark input[type=reset].col-6.active { background-image: linear-gradient(to right, #FF512F, #ff2f2f) !important; } html:not(.good-browser) button.col-7:not(.active):hover, html:not(.good-browser) input[type=submit].col-7:not(.active):hover, html:not(.good-browser) input[type=button].col-7:not(.active):hover, html:not(.good-browser) input[type=reset].col-7:not(.active):hover, html:not(.good-browser).dark button.col-7:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-7:not(.active):hover, html:not(.good-browser).dark input[type=button].col-7:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-7:not(.active):hover, html:not(.good-browser) button.col-7.active, html:not(.good-browser) input[type=submit].col-7.active, html:not(.good-browser) input[type=button].col-7.active, html:not(.good-browser) input[type=reset].col-7.active, html:not(.good-browser).dark button.col-7.active, html:not(.good-browser).dark input[type=submit].col-7.active, html:not(.good-browser).dark input[type=button].col-7.active, html:not(.good-browser).dark input[type=reset].col-7.active { background-image: linear-gradient(to right, #DA22FF, #9733EE) !important; } html:not(.good-browser) button.col-8:not(.active):hover, html:not(.good-browser) input[type=submit].col-8:not(.active):hover, html:not(.good-browser) input[type=button].col-8:not(.active):hover, html:not(.good-browser) input[type=reset].col-8:not(.active):hover, html:not(.good-browser).dark button.col-8:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-8:not(.active):hover, html:not(.good-browser).dark input[type=button].col-8:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-8:not(.active):hover, html:not(.good-browser) button.col-8.active, html:not(.good-browser) input[type=submit].col-8.active, html:not(.good-browser) input[type=button].col-8.active, html:not(.good-browser) input[type=reset].col-8.active, html:not(.good-browser).dark button.col-8.active, html:not(.good-browser).dark input[type=submit].col-8.active, html:not(.good-browser).dark input[type=button].col-8.active, html:not(.good-browser).dark input[type=reset].col-8.active { background-image: linear-gradient(to right, #2b5876, #4e4376) !important; } html:not(.good-browser) button.col-discord:not(.active):hover, html:not(.good-browser) input[type=submit].col-discord:not(.active):hover, html:not(.good-browser) input[type=button].col-discord:not(.active):hover, html:not(.good-browser) input[type=reset].col-discord:not(.active):hover, html:not(.good-browser).dark button.col-discord:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-discord:not(.active):hover, html:not(.good-browser).dark input[type=button].col-discord:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-discord:not(.active):hover, html:not(.good-browser) button.col-discord.active, html:not(.good-browser) input[type=submit].col-discord.active, html:not(.good-browser) input[type=button].col-discord.active, html:not(.good-browser) input[type=reset].col-discord.active, html:not(.good-browser).dark button.col-discord.active, html:not(.good-browser).dark input[type=submit].col-discord.active, html:not(.good-browser).dark input[type=button].col-discord.active, html:not(.good-browser).dark input[type=reset].col-discord.active { background-image: linear-gradient(to right, #7289DA, #7289DA) !important; } html:not(.good-browser) button.col-good:not(.active):hover, html:not(.good-browser) input[type=submit].col-good:not(.active):hover, html:not(.good-browser) input[type=button].col-good:not(.active):hover, html:not(.good-browser) input[type=reset].col-good:not(.active):hover, html:not(.good-browser).dark button.col-good:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-good:not(.active):hover, html:not(.good-browser).dark input[type=button].col-good:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-good:not(.active):hover, html:not(.good-browser) button.col-good.active, html:not(.good-browser) input[type=submit].col-good.active, html:not(.good-browser) input[type=button].col-good.active, html:not(.good-browser) input[type=reset].col-good.active, html:not(.good-browser).dark button.col-good.active, html:not(.good-browser).dark input[type=submit].col-good.active, html:not(.good-browser).dark input[type=button].col-good.active, html:not(.good-browser).dark input[type=reset].col-good.active { background-image: linear-gradient(to right, #56ab2f, #a8e063) !important; } html:not(.good-browser) button.col-bad:not(.active):hover, html:not(.good-browser) input[type=submit].col-bad:not(.active):hover, html:not(.good-browser) input[type=button].col-bad:not(.active):hover, html:not(.good-browser) input[type=reset].col-bad:not(.active):hover, html:not(.good-browser).dark button.col-bad:not(.active):hover, html:not(.good-browser).dark input[type=submit].col-bad:not(.active):hover, html:not(.good-browser).dark input[type=button].col-bad:not(.active):hover, html:not(.good-browser).dark input[type=reset].col-bad:not(.active):hover, html:not(.good-browser) button.col-bad.active, html:not(.good-browser) input[type=submit].col-bad.active, html:not(.good-browser) input[type=button].col-bad.active, html:not(.good-browser) input[type=reset].col-bad.active, html:not(.good-browser).dark button.col-bad.active, html:not(.good-browser).dark input[type=submit].col-bad.active, html:not(.good-browser).dark input[type=button].col-bad.active, html:not(.good-browser).dark input[type=reset].col-bad.active { background-image: linear-gradient(to right, #ED213A, #93291E) !important; }
 /* Better Button Colors */
-html.good-browser button.col-1, html.good-browser input[type=submit].col-1, html.good-browser input[type=button].col-1, html.good-browser input[type=reset].col-1 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #7474bf, #348ac7 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-1, html.good-browser.dark input[type=submit].col-1, html.good-browser.dark input[type=button].col-1, html.good-browser.dark input[type=reset].col-1 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #7474bf, #348ac7 50%, #2f2f2f 50%) !important; } html.good-browser button.col-2, html.good-browser input[type=submit].col-2, html.good-browser input[type=button].col-2, html.good-browser input[type=reset].col-2 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #1488CC, #2B32B2 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-2, html.good-browser.dark input[type=submit].col-2, html.good-browser.dark input[type=button].col-2, html.good-browser.dark input[type=reset].col-2 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #1488CC, #2B32B2 50%, #2f2f2f 50%) !important; } html.good-browser button.col-3, html.good-browser input[type=submit].col-3, html.good-browser input[type=button].col-3, html.good-browser input[type=reset].col-3 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #8E2DE2, #4A00E0 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-3, html.good-browser.dark input[type=submit].col-3, html.good-browser.dark input[type=button].col-3, html.good-browser.dark input[type=reset].col-3 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #8E2DE2, #4A00E0 50%, #2f2f2f 50%) !important; } html.good-browser button.col-4, html.good-browser input[type=submit].col-4, html.good-browser input[type=button].col-4, html.good-browser input[type=reset].col-4 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #4CB8C4, #3CD3AD 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-4, html.good-browser.dark input[type=submit].col-4, html.good-browser.dark input[type=button].col-4, html.good-browser.dark input[type=reset].col-4 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #4CB8C4, #3CD3AD 50%, #2f2f2f 50%) !important; } html.good-browser button.col-5, html.good-browser input[type=submit].col-5, html.good-browser input[type=button].col-5, html.good-browser input[type=reset].col-5 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #4776E6, #8E54E9 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-5, html.good-browser.dark input[type=submit].col-5, html.good-browser.dark input[type=button].col-5, html.good-browser.dark input[type=reset].col-5 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #4776E6, #8E54E9 50%, #2f2f2f 50%) !important; } html.good-browser button.col-6, html.good-browser input[type=submit].col-6, html.good-browser input[type=button].col-6, html.good-browser input[type=reset].col-6 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #FF512F, #DD2476 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-6, html.good-browser.dark input[type=submit].col-6, html.good-browser.dark input[type=button].col-6, html.good-browser.dark input[type=reset].col-6 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #FF512F, #DD2476 50%, #2f2f2f 50%) !important; } html.good-browser button.col-7, html.good-browser input[type=submit].col-7, html.good-browser input[type=button].col-7, html.good-browser input[type=reset].col-7 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #fc00ff, #00dbde 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-7, html.good-browser.dark input[type=submit].col-7, html.good-browser.dark input[type=button].col-7, html.good-browser.dark input[type=reset].col-7 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #fc00ff, #00dbde 50%, #2f2f2f 50%) !important; } html.good-browser button.col-8, html.good-browser input[type=submit].col-8, html.good-browser input[type=button].col-8, html.good-browser input[type=reset].col-8 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #2b5876, #4e4376 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-8, html.good-browser.dark input[type=submit].col-8, html.good-browser.dark input[type=button].col-8, html.good-browser.dark input[type=reset].col-8 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #2b5876, #4e4376 50%, #2f2f2f 50%) !important; } html.good-browser button.col-discord, html.good-browser input[type=submit].col-discord, html.good-browser input[type=button].col-discord, html.good-browser input[type=reset].col-discord { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #7289DA, #7289DA 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-discord, html.good-browser.dark input[type=submit].col-discord, html.good-browser.dark input[type=button].col-discord, html.good-browser.dark input[type=reset].col-discord { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #7289DA, #7289DA 50%, #2f2f2f 50%) !important; } html.good-browser button.col-good, html.good-browser input[type=submit].col-good, html.good-browser input[type=button].col-good, html.good-browser input[type=reset].col-good { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #56ab2f, #a8e063 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-good, html.good-browser.dark input[type=submit].col-good, html.good-browser.dark input[type=button].col-good, html.good-browser.dark input[type=reset].col-good { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #56ab2f, #a8e063 50%, #2f2f2f 50%) !important; } html.good-browser button.col-bad, html.good-browser input[type=submit].col-bad, html.good-browser input[type=button].col-bad, html.good-browser input[type=reset].col-bad { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #ED213A, #93291E 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-bad, html.good-browser.dark input[type=submit].col-bad, html.good-browser.dark input[type=button].col-bad, html.good-browser.dark input[type=reset].col-bad { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #ED213A, #93291E 50%, #2f2f2f 50%) !important; }
+html.good-browser button.col-1, html.good-browser input[type=submit].col-1, html.good-browser input[type=button].col-1, html.good-browser input[type=reset].col-1 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #7474bf, #348ac7 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-1, html.good-browser.dark input[type=submit].col-1, html.good-browser.dark input[type=button].col-1, html.good-browser.dark input[type=reset].col-1 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #7474bf, #348ac7 50%, #2f2f2f 50%) !important; } html.good-browser button.col-2, html.good-browser input[type=submit].col-2, html.good-browser input[type=button].col-2, html.good-browser input[type=reset].col-2 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #1488CC, #2B32B2 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-2, html.good-browser.dark input[type=submit].col-2, html.good-browser.dark input[type=button].col-2, html.good-browser.dark input[type=reset].col-2 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #1488CC, #2B32B2 50%, #2f2f2f 50%) !important; } html.good-browser button.col-3, html.good-browser input[type=submit].col-3, html.good-browser input[type=button].col-3, html.good-browser input[type=reset].col-3 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #8E2DE2, #4A00E0 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-3, html.good-browser.dark input[type=submit].col-3, html.good-browser.dark input[type=button].col-3, html.good-browser.dark input[type=reset].col-3 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #8E2DE2, #4A00E0 50%, #2f2f2f 50%) !important; } html.good-browser button.col-4, html.good-browser input[type=submit].col-4, html.good-browser input[type=button].col-4, html.good-browser input[type=reset].col-4 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #4CB8C4, #3CD3AD 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-4, html.good-browser.dark input[type=submit].col-4, html.good-browser.dark input[type=button].col-4, html.good-browser.dark input[type=reset].col-4 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #4CB8C4, #3CD3AD 50%, #2f2f2f 50%) !important; } html.good-browser button.col-5, html.good-browser input[type=submit].col-5, html.good-browser input[type=button].col-5, html.good-browser input[type=reset].col-5 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #4776E6, #8E54E9 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-5, html.good-browser.dark input[type=submit].col-5, html.good-browser.dark input[type=button].col-5, html.good-browser.dark input[type=reset].col-5 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #4776E6, #8E54E9 50%, #2f2f2f 50%) !important; } html.good-browser button.col-6, html.good-browser input[type=submit].col-6, html.good-browser input[type=button].col-6, html.good-browser input[type=reset].col-6 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #FF512F, #ff2f2f 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-6, html.good-browser.dark input[type=submit].col-6, html.good-browser.dark input[type=button].col-6, html.good-browser.dark input[type=reset].col-6 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #FF512F, #ff2f2f 50%, #2f2f2f 50%) !important; } html.good-browser button.col-7, html.good-browser input[type=submit].col-7, html.good-browser input[type=button].col-7, html.good-browser input[type=reset].col-7 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #DA22FF, #9733EE 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-7, html.good-browser.dark input[type=submit].col-7, html.good-browser.dark input[type=button].col-7, html.good-browser.dark input[type=reset].col-7 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #DA22FF, #9733EE 50%, #2f2f2f 50%) !important; } html.good-browser button.col-8, html.good-browser input[type=submit].col-8, html.good-browser input[type=button].col-8, html.good-browser input[type=reset].col-8 { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #2b5876, #4e4376 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-8, html.good-browser.dark input[type=submit].col-8, html.good-browser.dark input[type=button].col-8, html.good-browser.dark input[type=reset].col-8 { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #2b5876, #4e4376 50%, #2f2f2f 50%) !important; } html.good-browser button.col-discord, html.good-browser input[type=submit].col-discord, html.good-browser input[type=button].col-discord, html.good-browser input[type=reset].col-discord { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #7289DA, #7289DA 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-discord, html.good-browser.dark input[type=submit].col-discord, html.good-browser.dark input[type=button].col-discord, html.good-browser.dark input[type=reset].col-discord { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #7289DA, #7289DA 50%, #2f2f2f 50%) !important; } html.good-browser button.col-good, html.good-browser input[type=submit].col-good, html.good-browser input[type=button].col-good, html.good-browser input[type=reset].col-good { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #56ab2f, #a8e063 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-good, html.good-browser.dark input[type=submit].col-good, html.good-browser.dark input[type=button].col-good, html.good-browser.dark input[type=reset].col-good { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #56ab2f, #a8e063 50%, #2f2f2f 50%) !important; } html.good-browser button.col-bad, html.good-browser input[type=submit].col-bad, html.good-browser input[type=button].col-bad, html.good-browser input[type=reset].col-bad { background-image: linear-gradient(to right, #fff 50%, #000 50%), linear-gradient(to right, #ED213A, #93291E 50%, #F5F7FA 50%) !important; } html.good-browser.dark button.col-bad, html.good-browser.dark input[type=submit].col-bad, html.good-browser.dark input[type=button].col-bad, html.good-browser.dark input[type=reset].col-bad { background-image: linear-gradient(to right, #fff 50%, #fff 50%), linear-gradient(to right, #ED213A, #93291E 50%, #2f2f2f 50%) !important; }
