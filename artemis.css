@@ -323,7 +323,7 @@ textarea {
     margin: 5px;
     font-family: inherit;
     font-size: inherit;
-    transition: all 0.2s;
+    transition: background 0.2s;
 }
 
 input[type=text]:hover,
@@ -340,7 +340,7 @@ input[type=datetime]:hover,
 input[type=datetime-local]:hover,
 textarea:hover {
     background: #cacaca;
-    transition: all 0.5s;
+    transition: background 0.5s;
 }
 
 html.dark input[type=text]:hover,
